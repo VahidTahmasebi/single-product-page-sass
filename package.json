@@ -1,0 +1,12 @@
+{
+  "name": "single-product-page",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "sass styles/sass/style.scss styles/css/main.css --watch"
+  },
+  "keywords": [],
+  "author": "vaeid_t",
+  "license": "ISC"
+}
