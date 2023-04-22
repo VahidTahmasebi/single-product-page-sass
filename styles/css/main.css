@@ -53,4 +53,121 @@ table {
   border-spacing: 0;
 }
 
+body {
+  max-width: 1440px;
+  margin: auto;
+  padding: 20px 80px;
+  font-family: "Inter", sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ededed;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+.navbar-left-label {
+  margin-right: 60px;
+  font-size: 32.8px;
+  font-weight: bold;
+  font-style: italic;
+  color: #0d3356;
+}
+.navbar-left-list {
+  width: 372px;
+  display: flex;
+  justify-content: space-between;
+}
+.navbar-left-list-link {
+  font-size: 16px;
+  text-decoration: none;
+  color: #3a4980;
+}
+
+.navbar-right {
+  width: 324px;
+  display: flex;
+  justify-content: space-between;
+}
+.navbar-right-item {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  border-radius: 25px;
+}
+.navbar-right-item-cart {
+  position: relative;
+  color: #875541;
+  background-color: #f5f1ee;
+}
+.navbar-right-item-notify {
+  position: relative;
+  color: #101f37;
+  background-color: #eeeff8;
+}
+.navbar-right-item-user {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.navbar-right-item-user h4 {
+  font-size: 12px;
+  font-weight: 500;
+  color: #c0c3c6;
+}
+.navbar-right-item-user h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1d364d;
+}
+
+.cart-length {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  display: grid;
+  place-items: center;
+  border: 3px solid white;
+  border-radius: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #1d364d;
+}
+
+.notify-pulse {
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  border-radius: 25px;
+  background: #d75951;
+  animation: notify-pulse 0.85s infinite linear;
+}
+
+@keyframes notify-pulse {
+  0% {
+    transform: scale(0.15);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
 /*# sourceMappingURL=main.css.map */
