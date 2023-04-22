@@ -1,0 +1,19 @@
+@mixin MediaQuery($screen) {
+  @if $screen == sm {
+    @media only screen and (min-width: $sm) {
+      @content;
+    }
+  } @else if $screen == m {
+    @media only screen and (min-width: $m) {
+      @content;
+    }
+  } @else if $screen == lg {
+    @media only screen and (min-width: $lg) {
+      @content;
+    }
+  } @else if $screen == xl {
+    @media only screen and (min-width: $xl) {
+      @content;
+    }
+  }
+}
