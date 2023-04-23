@@ -1,10 +1,17 @@
 .introduction {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  margin-top: 30px;
+  margin: auto;
+  @include MediaQuery(m) {
+    flex-direction: row;
+    margin-top: 30px;
+  }
 }
 
 .introduction-images {
+  @extend %fullSpace;
+
   &-main {
     width: 587px;
     height: 691px;
@@ -28,7 +35,10 @@
 }
 
 .specification {
-  width: 582px;
+  @extend %fullSpace;
+  @include MediaQuery(lg) {
+    width: 582px;
+  }
 
   &-route {
     width: 495px;

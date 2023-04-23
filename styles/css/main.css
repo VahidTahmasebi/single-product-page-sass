@@ -53,10 +53,15 @@ table {
   border-spacing: 0;
 }
 
+.specification, .introduction-images {
+  width: max-content;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
 body {
   max-width: 1440px;
   margin: auto;
-  padding: 20px 80px;
   font-family: "Inter", sans-serif;
 }
 
@@ -206,8 +211,15 @@ body {
 }
 .introduction {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  margin-top: 30px;
+  margin: auto;
+}
+@media only screen and (min-width: 780px) {
+  .introduction {
+    flex-direction: row;
+    margin-top: 30px;
+  }
 }
 
 .introduction-images-main {
@@ -230,8 +242,10 @@ body {
   border: 3px solid #3a4980;
 }
 
-.specification {
-  width: 582px;
+@media only screen and (min-width: 1024px) {
+  .specification {
+    width: 582px;
+  }
 }
 .specification-route {
   width: 495px;
