@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: space-between;
   margin: auto;
-  @include MediaQuery(m) {
+  @include MediaQuery(lg) {
     flex-direction: row;
     margin-top: 30px;
   }
@@ -11,45 +11,98 @@
 
 .introduction-images {
   @extend %fullSpace;
-
+  display: flex;
+  flex-direction: column;
+  @include MediaQuery(sm) {
+    flex-direction: row;
+  }
+  @include MediaQuery(lg) {
+    flex-direction: column;
+  }
   &-main {
-    width: 587px;
-    height: 691px;
+    width: 100%;
+    height: 300px;
     margin-bottom: 37px;
     border-radius: $radius-normal;
+
+    @include MediaQuery(sm) {
+      width: 350px;
+      height: 420px;
+    }
+    @include MediaQuery(lg) {
+      width: 500px;
+      height: 621px;
+    }
   }
   &-thumbnail {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: space-evenly;
     align-items: center;
-
+    @include MediaQuery(sm) {
+      flex-direction: column;
+      margin-left: 25px;
+    }
+    @include MediaQuery(lg) {
+      flex-direction: row;
+    }
+    @include MediaQuery(lg) {
+      margin-left: 0;
+    }
     &-item {
-      width: 115px;
-      height: 115px;
+      width: 40px;
+      height: 40px;
       border-radius: $radius-low;
+      @include MediaQuery(sm) {
+        width: 55px;
+        height: 55px;
+      }
+      @include MediaQuery(lg) {
+        width: 80px;
+        height: 80px;
+      }
     }
     &-select {
       border: 3px solid #3a4980;
+    }
+    .material-symbols-outlined {
+      @include MediaQuery(sm) {
+        transform: rotate(90deg);
+      }
+      @include MediaQuery(lg) {
+        transform: rotate(0deg);
+      }
     }
   }
 }
 
 .specification {
   @extend %fullSpace;
+  width: 100%;
   @include MediaQuery(lg) {
+    width: 502px;
+  }
+  @include MediaQuery(xl) {
     width: 582px;
   }
 
   &-route {
-    width: 495px;
+    width: 80%;
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 8px 12px;
     border-radius: $radius-low;
-    font-size: 14px;
+    font-size: 1rem;
     color: #a3a9c2;
     background-color: #edf0f8;
+    overflow-x: auto;
+    @include MediaQuery(m) {
+      width: 56%;
+    }
+    @include MediaQuery(xl) {
+      width: 495px;
+    }
 
     &-select {
       font-weight: 600;
@@ -61,14 +114,18 @@
     display: flex;
     justify-content: space-between;
     margin: 30px 0;
+    flex-direction: column;
 
+    @include MediaQuery(xl) {
+      flex-direction: row;
+    }
     &-title {
       margin-bottom: 11px;
-      font-size: 28px;
+      font-size: 1.8rem;
       font-weight: 600;
     }
     &-brand {
-      font-size: 16px;
+      font-size: 1rem;
       color: #b9bbbf;
     }
 
@@ -76,6 +133,10 @@
       width: 170px;
       display: flex;
       justify-content: space-between;
+      margin-top: 10px;
+      @include MediaQuery(xl) {
+        margin-top: 0;
+      }
 
       &-item {
         align-items: center;
@@ -104,15 +165,19 @@
     border-width: 1px 0px;
     border-style: solid;
     border-color: #e4e4e4;
+    flex-direction: column;
 
+    @include MediaQuery(xl) {
+      flex-direction: row;
+    }
     &-price {
       margin-bottom: 14px;
-      font-size: 34px;
+      font-size: 2.5rem;
       font-weight: bold;
       color: #3a4980;
     }
     &-previous_price {
-      font-size: 21px;
+      font-size: 1.5rem;
       text-decoration: line-through;
       color: #00000079;
     }
@@ -120,6 +185,11 @@
       display: flex;
       align-items: center;
       gap: 12px;
+      margin-top: 25px;
+
+      @include MediaQuery(xl) {
+        margin-top: 0;
+      }
 
       &-item {
         padding: 7px 10px;
@@ -142,7 +212,7 @@
     }
     &-recommended {
       display: flex;
-      font-size: 14px;
+      font-size: 0.9rem;
 
       span {
         font-weight: 600;
@@ -159,7 +229,7 @@
     padding: 33px 0;
 
     &-title {
-      font-size: 16px;
+      font-size: 1rem;
       font-weight: 500;
       color: #b9bbbf;
     }
@@ -169,12 +239,15 @@
       margin-top: 16px;
     }
     &-color {
-      width: 50px;
-      height: 50px;
+      width: 30px;
+      height: 30px;
       display: flex;
-
       border-radius: $radius-full;
 
+      @include MediaQuery(m) {
+        width: 45px;
+        height: 45px;
+      }
       &-outline {
         border: 3px solid #ecdecc;
         border-radius: $radius-full;
@@ -215,22 +288,27 @@
     border-color: #e4e4e4;
 
     &-title {
-      font-size: 16px;
+      font-size: 1rem;
       font-weight: 500;
       color: #b9bbbf;
     }
     &-sizes {
+      width: 250px;
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
       gap: 11px;
       margin-top: 16px;
 
+      @include MediaQuery(xl) {
+        width: 100%;
+      }
       &-item {
         display: flex;
         align-items: center;
         padding: 7px 10px;
         border-radius: $radius-low;
-        font-size: 14px;
+        font-size: 1rem;
         font-weight: 500;
         color: #726c6c;
         background-color: #f3f3f3;
@@ -247,24 +325,34 @@
 
   &-section5 {
     display: flex;
+    flex-direction: column;
     gap: 16px;
     padding: 33px 0;
+    @include MediaQuery(sm) {
+      flex-direction: row;
+    }
+    @include MediaQuery(lg) {
+      flex-direction: column;
+    }
+    @include MediaQuery(xl) {
+      flex-direction: row;
+    }
 
     &-amount {
-      width: 169px;
+      width: 149px;
       display: flex;
       justify-content: space-around;
       align-items: center;
       gap: 16px;
-      padding: 10px 5px;
+      padding: 20px 5px;
       border-radius: $radius-full;
-      font-size: 18px;
+      font-size: 1.1rem;
       font-weight: bold;
       color: #3a4980;
       background-color: #f3f3f3;
     }
     button {
-      width: 309px;
+      width: 265px;
       height: 59px;
       display: flex;
       justify-content: center;
@@ -273,7 +361,7 @@
       border: none;
       outline: none;
       border-radius: $radius-full;
-      font-size: 16px;
+      font-size: 1rem;
       font-weight: 600;
       color: #ffffff;
       background-color: #3a4980;
@@ -281,7 +369,7 @@
   }
 
   &-section6 {
-    width: 545px;
+    width: 75%;
     height: 128px;
     display: flex;
     flex-direction: column;
@@ -289,6 +377,12 @@
     padding: 17px;
     border: 1px solid #e4e4e4;
     border-radius: $radius-normal;
+    @include MediaQuery(sm) {
+      width: 380px;
+    }
+    @include MediaQuery(xl) {
+      width: 545px;
+    }
 
     &-item {
       width: auto;
@@ -299,13 +393,13 @@
         color: #d75951;
       }
       &-title {
-        font-size: 17px;
+        font-size: 1rem;
         font-weight: bold;
         margin-bottom: 10px;
         color: #1d364d;
       }
       &-details {
-        font-size: 14px;
+        font-size: 0.7rem;
         color: #726c6c;
         text-decoration: underline;
       }
